@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+  
+	<title>NFTeach</title>
+	<meta charset='utf-8'>
+	<link rel="stylesheet" href="style.css" type="text/css" media="all">
+	<script type="module" src="./capture.js"></script>
+  <script data-main="scripts/app" src="scripts/require.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+  
+
+</head>
+<body>
+  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">
+      <img src="assets/5118903.png">
+    </button>
+    <div id="myDropdown" class="dropdown-content">
+      <h3 id="placeholder"> No lecture record </h3>
+    </div>
+  </div>
+<div class="contentarea">
+	<h1>
+		NFTeach
+	</h1>
+	<h2>
+		Description
+  </h2>
+  <div class="camera">
+
+    <video id="video">
+      Video stream not available.
+    </video>
+
+    <div id=borderCamera></div>
+    <div id="recordingDot" class="recordingDot hidden"></div>
+    
+  </div>
+  <canvas id="canvas">
+    <div class="output">
+      <img id="photo" alt="The screen capture will appear in this box."> 
+    </div>
+
+
+  </canvas>
+  <div id=borderPicture></div>
+
+  
+  <br clear="all">
+
+  <button id="startbutton" class="button">Start</button> 
+  <button id="stopbutton" class="buttonStop">Stop</button>
+
+  <br>
+
+  <h3 id="joy"></h3>
+  <h3 id="spike"></h3>
+
+  <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    </script>
+
+</div>
+
+</body>
+</html>

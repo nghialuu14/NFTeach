@@ -1,0 +1,19 @@
+{
+  "name": "webrtc-demo",
+  "description": "Cloud Functions for Firebase",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node main.js",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^2.0.5"
+  },
+  "dependencies": {
+    "@google-cloud/vision": "^2.4.2",
+    "firebase": "^8.10.1"
+  }
+}
