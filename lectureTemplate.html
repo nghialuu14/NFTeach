@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+    <head>
+    
+    <title>Lecture Number</title>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="lecture.css" type="text/css" media="all">
+    <script type="module" src="./capture.js"></script>
+    <script data-main="scripts/app" src="scripts/require.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Lecture 3 1/22/22</h1>
+        </div>
+
+        <div class="container">
+            <canvas id="myChart" height="400"></canvas>
+            <h1 id="yAxisLabel">Smiles</h1>
+            <h1 id="xAxisLabel">Time(seconds)</h1>
+        </div>
+    </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+
+        const labels = [
+        '0',
+        '3',
+        '6',
+        '9',
+        '12',
+        '15',
+        ];
+        const data = {
+        labels: labels,
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0,2, 2, 4, 5, 5, 5],
+        }]
+        };
+
+        const config = {
+        type: 'line',
+        data,
+        options: {}
+        };
+        // === include 'setup' then 'config' above ===
+      
+        var myChart = new Chart(
+          document.getElementById('myChart'),
+          config
+        );
+      </script>
+</html>

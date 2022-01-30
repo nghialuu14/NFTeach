@@ -1,3 +1,4 @@
+const date = new Date();
 
 
 (function() {
@@ -65,6 +66,7 @@
       blinking.setAttribute("style","background-color: red");
       var dot = document.getElementById('recordingDot');
       dot.className = "recordingDot Blink";
+
 
       takepicture();
       ev.preventDefault();
@@ -136,7 +138,7 @@ async function run(fileName){
       }
     ]
   }
-  let key = 'ya29.A0ARrdaM-yQPKw4RNhI_Yjksp_WA9H9RFJczKwa8-T95y93tgNHdAuC5hJCxiZfiLAiG8CJqiGjM0cZtytkstEkxP_BCHW7E__Jne7rQJgnul0Yj8_vZz1073Qqft0r9B_Bw_gKkEgomCIvvpbZVYQsmjqy8dloQ';
+  let key = 'ya29.A0ARrdaM-5x5pWEH0Xd9LdEaBO3r_vvK0EjvSy2_d8-nojpAL1GWCowKTq6LkXJK3EXxn4DARBfIHjWG-zGZmczz5w68UiM2COLE8fkfSxnExMazOIsv2H72habfjqmCUhvbEIVy_ATENfSUR1Sa79jEy-tIwOQg';
   fetch(`https://vision.googleapis.com/v1/images:annotate`, {
       method: 'POST',
       headers: {
@@ -160,6 +162,7 @@ async function run(fileName){
 
           };
           total_smile += cnt_joy;
+      
           document.getElementById("joy").innerHTML = "Number of happy faces: " + cnt_joy;
           if (cnt_joy >= 2) 
             document.getElementById("spike").innerHTML = "YOU ARE DOING A GREAT JOB!!";
@@ -176,6 +179,7 @@ async function run(fileName){
 
   function taking(){
     var context = canvas.getContext('2d');
+    
     if (width && height) {
       canvas.width = width;
       canvas.height = height;
@@ -194,7 +198,9 @@ async function run(fileName){
   
   function takepicture() {
     
+
     if (!nIntervId) {
+
       nIntervId = setInterval(taking, 1000);
     }
   }
@@ -211,9 +217,10 @@ async function run(fileName){
       myobj.remove();
     }
     s += "Lecture  #" + count + " has " + total_smile + " smiles\n";
-    var entry = document.createElement('h3');
+    var entry = document.createElement('a');
     var breakLine = document.createElement('hr');
     entry.appendChild(document.createTextNode(s));
+    entry.href = 'lectureTemplate.html';
     list.appendChild(entry);
     list.appendChild(breakLine);
     total_smile = 0;
@@ -226,3 +233,10 @@ async function run(fileName){
 
 
 //"Your application has authenticated using end user credentials from the Google Cloud SDK or Google Cloud Shell which are not supported by the vision.googleapis.com. We recommend configuring the billing/quota_project setting in gcloud or using a service account through the auth/impersonate_service_account setting. For more information about service accounts and how to use them in your application, see https://cloud.google.com/docs/authentication/. If you are getting this error with curl or similar tools, you may need to specify 'X-Goog-User-Project' HTTP header for quota and billing purposes. For more information regarding 'X-Goog-User-Project' header, please check https://cloud.google.com/apis/docs/system-parameters."
+
+
+function redirectNew(){
+  
+  location.href = 'lectureTemplate.html';
+}
+
